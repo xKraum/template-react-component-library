@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // Compiles code for ES2020.
+    "useDefineForClassFields": true, // Enables the use of 'define' for class fields.
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext", // AllowS import/export on generated code.
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true, // Allows TS file imports.
+    "resolveJsonModule": true, // Allows import JSON modules.
+    "isolatedModules": true,
+    "noEmit": true, // Prevents TypeScript from emitting output files.
+    "jsx": "react-jsx", // React JSX support.
+
+    /* Linting */
+    "strict": true, // Enables strict type checking.
+    // "noUnusedLocals": true, // Enforces the use of all local variables.
+    "noUnusedParameters": true, // Enforces the use of all function parameters.
+    "noFallthroughCasesInSwitch": true, // Enforces using 'break' between switch cases.
+    "declaration": true // Generates TS declaration files (.d.ts).
+  },
+  "include": ["src"], // Specifies the folder/s for TS to process.
+  "exclude": ["src/**/__docs__", "src/**/__test__"] // Exclude from TS compilation.
+}
