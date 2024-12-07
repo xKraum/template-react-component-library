@@ -3,23 +3,24 @@
     "target": "ES2020", // Compiles code for ES2020.
     "useDefineForClassFields": true, // Enables the use of 'define' for class fields.
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext", // AllowS import/export on generated code.
+    "module": "ESNext", // Allows import/export on generated code.
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true, // Allows TS file imports.
-    "resolveJsonModule": true, // Allows import JSON modules.
-    "isolatedModules": true,
-    "noEmit": true, // Prevents TypeScript from emitting output files.
+    "allowImportingTsExtensions": true, // Allows importing `.ts` files as modules
+    "resolveJsonModule": true, // Allows importing JSON files as modules
+    "isolatedModules": true, // TypeScript performs individual file checks.
+    "noEmit": true, // Uses TypeScript only for type-checking, making the bundler (Vite) the one that manages the code output.
     "jsx": "react-jsx", // React JSX support.
 
     /* Linting */
     "strict": true, // Enables strict type checking.
-    // "noUnusedLocals": true, // Enforces the use of all local variables.
+    "noUnusedLocals": true, // Enforces the use of all local variables.
     "noUnusedParameters": true, // Enforces the use of all function parameters.
     "noFallthroughCasesInSwitch": true, // Enforces using 'break' between switch cases.
-    "declaration": true // Generates TS declaration files (.d.ts).
+    "declaration": true, // Generates TS declaration files (.d.ts).
+    "types": ["@testing-library/jest-dom"] // Specifies additional global types
   },
-  "include": ["src"], // Specifies the folder/s for TS to process.
-  "exclude": ["src/**/__docs__", "src/**/__test__"] // Exclude from TS compilation.
+  "include": ["src", "setupTests.ts"], // Include in TS compilation and linting.
+  "exclude": ["src/**/__docs__"] // Exclude from TS compilation.
 }
