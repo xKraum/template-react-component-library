@@ -5,7 +5,7 @@ module.exports = {
     jest: true, // Enable Jest for testing environment
     browser: true, // Enable browser environment
   },
-  ignorePatterns: ['.eslintrc.cjs', 'vite.config.ts'],
+  ignorePatterns: ['.eslintrc.cjs', 'vite.config.ts', 'dist/**'],
   extends: [
     // NOTE: Extends applies a group of rules already defined by the different plugins.
     // NOTE: If a plugin starts with "eslint-config-" that part of the name can be omitted.
@@ -20,7 +20,7 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: true,
+    project: true, // Source file being linted should use type information based on the nearest tsconfig.json.
     ecmaFeatures: {
       jsx: true,
     },
