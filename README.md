@@ -1,6 +1,8 @@
 # React Component Library Template
 
-This project is an updated template for building a React Component Library.
+This project is an up-to-date template, as of 2024, for building a React Component Library using a `<Button />` component as a placeholder.
+
+This document includes a comprehensible documentation that explains the purpose of all scripts and configuration files, as well as the reasoning behind the structure.
 
 ## Index
 
@@ -105,19 +107,4 @@ Also, refer to the official documentation on [extending](https://www.typescriptl
 
 - **Jest-DOM Matchers Integration**: This setup file **extends Vitest's `expect`** with matchers from **Jest-DOM**, such as `.toBeInTheDocument()`.
 - **TypeScript Integration**: Extends TypeScript's `Assertion` interface in **Vitest** to include **Jest-DOM** matchers, ensuring TypeScript type safety for these assertions.
-
-```ts
-import * as matchers from '@testing-library/jest-dom/matchers';
-import { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers';
-import { expect } from 'vitest';
-
-declare module 'vitest' {
-  interface Assertion<T = any>
-    extends jest.Matchers<void, T>,
-      TestingLibraryMatchers<T, void> {}
-}
-
-expect.extend(matchers);
-```
-
-Also, check the official documentation for [extending matchers](https://vitest.dev/guide/extending-matchers).
+  Also, check the official documentation for [extending matchers](https://vitest.dev/guide/extending-matchers).
