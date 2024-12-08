@@ -1,6 +1,6 @@
 # React Component Library Template
 
-This project is an up-to-date template, as of 2024, for building a React Component Library using a `<Button />` component as a placeholder.
+This project is an up-to-date template, as of 2024, for building a React Component Library using a `<Button />` and `<Input />` components as a placeholder.
 
 This document includes a comprehensible documentation that explains the purpose of all scripts and configuration files, as well as the reasoning behind the structure.
 
