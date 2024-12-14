@@ -16,13 +16,24 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: './src/index.ts', // Entry point for building the library.
+      entry: {
+        // Entry point for the building the full library bundle.
+        index: './src/index.ts',
+
+        // Entry points for building individual components.
+        button: 'src/components/Button/index.ts',
+        input: 'src/components/Input/index.ts',
+      },
       name: 'template-react-component-library', // Sets the name of the generated library.
-      fileName: (format) => `index.${format}.js`, // Generates the output file name based on the formats (index.cjs.js & index.es.js).
-      formats: ['cjs', 'es'], // Specifies the output formats (CommonJS and ES modules).
+      // fileName: (format) => `index.${format}.js`, // Generates the output file name based on the formats (index.cjs.js & index.es.js).
+      fileName: (format, entryName) => `${entryName}.${format}.js`,
+      formats: ['es'], // Specifies the output formats (ES modules).
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)], // Prevents peer dependencies to bundle them into the final output.
+      external: ['react/jsx-runtime', ...Object.keys(peerDependencies)], // Prevents peer dependencies to bundle them into the final output.
+      globals: {
+        'react/jsx-runtime': 'react/jsx-runtime',
+      },
     },
     sourcemap: true, // Generates back the original source code (unminified) for debugging.
     emptyOutDir: true, // Clears the output directory before building so no old/outdated files are left behind.
