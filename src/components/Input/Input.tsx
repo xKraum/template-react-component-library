@@ -8,6 +8,7 @@ export type InputProps = {
 
 const Input = ({ onChange, placeholder = '', value }: InputProps) => (
   <input
+    className="bg-red-100"
     placeholder={placeholder}
     type="text"
     value={value}
