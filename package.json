@@ -12,16 +12,12 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
+      "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./button": {
-      "import": "./dist/button.es.js",
-      "types": "./dist/components/Button/index.d.ts"
-    },
-    "./input": {
-      "import": "./dist/input.es.js",
-      "types": "./dist/components/Input/index.d.ts"
+    "./*": {
+      "import": "./dist/components/*/*.js",
+      "types": "./dist/components/*/*.d.ts"
     }
   },
   "scripts": {
