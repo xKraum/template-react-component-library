@@ -2,7 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vitest } from 'vitest';
 
-import Input from '../Input';
+import { Input } from '../Input';
 
 const renderInput = (value = '', onChange = vitest.fn()) => {
   render(<Input value={value} onChange={onChange} />);
