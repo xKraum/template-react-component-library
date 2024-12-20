@@ -5,8 +5,7 @@ export type ButtonProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-const Button = ({ label = 'Default', onClick = undefined }: ButtonProps) => (
-  <button onClick={onClick}>{label}</button>
-);
-
-export default Button;
+export const Button = ({
+  label = 'Default',
+  onClick = undefined,
+}: ButtonProps) => <button onClick={onClick}>{label}</button>;

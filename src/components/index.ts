@@ -1,3 +1,3 @@
 // NOTE: Export components from here.
-export * from './Button';
-export * from './Input';
+export { Button } from './Button/Button';
+export { Input } from './Input/Input';
