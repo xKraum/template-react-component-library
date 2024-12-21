@@ -2,6 +2,7 @@
 import fs from 'fs';
 import { defineConfig, UserConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import type { InlineConfig } from 'vitest/node';
 import { peerDependencies } from './package.json';
 
@@ -48,7 +49,7 @@ export default defineConfig({
       },
       output: {
         chunkFileNames: 'chunks/[name]-[hash].js', // Code-splitting generated chunks.
-        assetFileNames: 'assets/[name]-[hash][extname]',
+        assetFileNames: 'assets/[name][extname]',
         entryFileNames: ({ name }) =>
           name === 'index' ? '[name].js' : 'components/[name]/[name].js', // Entry points for the imported library.}
       },
@@ -61,5 +62,6 @@ export default defineConfig({
     dts({
       tsconfigPath: './tsconfig.build.json', // Specifies a custom tsconfig to avoid generating declaration files for test files (__test__/{Component}.test.d.ts).
     }),
+    libInjectCss(),
   ],
 } as VitestConfigExport);

@@ -1,4 +1,5 @@
 import { MouseEventHandler } from 'react';
+import './Button.css';
 
 export type ButtonProps = {
   label?: string;
@@ -8,4 +9,8 @@ export type ButtonProps = {
 export const Button = ({
   label = 'Default',
   onClick = undefined,
-}: ButtonProps) => <button onClick={onClick}>{label}</button>;
+}: ButtonProps) => (
+  <button className="trcl" onClick={onClick}>
+    {label}
+  </button>
+);

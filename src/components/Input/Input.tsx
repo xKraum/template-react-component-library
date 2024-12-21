@@ -1,4 +1,5 @@
 import { ChangeEventHandler } from 'react';
+import './Input.css';
 
 export type InputProps = {
   placeholder?: string;
@@ -8,6 +9,7 @@ export type InputProps = {
 
 export const Input = ({ onChange, placeholder = '', value }: InputProps) => (
   <input
+    className="trcl"
     placeholder={placeholder}
     type="text"
     value={value}
