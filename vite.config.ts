@@ -50,7 +50,7 @@ export default defineConfig({
         chunkFileNames: 'chunks/[name]-[hash].js', // Code-splitting generated chunks.
         assetFileNames: 'assets/[name]-[hash][extname]',
         entryFileNames: ({ name }) =>
-          name === 'index' ? '[name].js' : `components/[name]/[name].js`, // Entry points for the imported library.}
+          name === 'index' ? '[name].js' : 'components/[name]/[name].js', // Entry points for the imported library.}
       },
     },
     sourcemap: true, // Generates back the original source code (unminified) for debugging.
