@@ -54,7 +54,7 @@ export default defineConfig({
           name === 'index' ? '[name].js' : 'components/[name]/[name].js', // Entry points for the imported library.}
       },
     },
-    sourcemap: true, // Generates back the original source code (unminified) for debugging.
+    sourcemap: false, // If true generates back the original source code (unminified) for debugging.
     emptyOutDir: true, // Clears the output directory before building so no old/outdated files are left behind.
   },
   plugins: [
