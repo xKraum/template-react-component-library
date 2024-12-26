@@ -16,3 +16,11 @@ export const DefaultButton: Story = {
     onClick: () => alert('Default Button'),
   },
 };
+
+export const DisabledButton: Story = {
+  args: {
+    disabled: true,
+    label: 'Disabled Button',
+    onClick: () => alert('Disabled Button'),
+  },
+};
