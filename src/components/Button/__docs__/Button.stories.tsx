@@ -1,26 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from './../Button';
+import { Button, ButtonProps } from './../Button';
 
-const meta: Meta<typeof Button> = {
+export default {
   component: Button,
   title: 'Button',
-};
+} as Meta<typeof Button>;
 
-export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<ButtonProps>;
 
-export const DefaultButton: Story = {
+export const ButtonDefault: Story = {
   args: {
-    label: 'Default Button',
+    label: 'Button Default',
     onClick: () => alert('Default Button'),
   },
 };
 
-export const DisabledButton: Story = {
+export const ButtonDisabled: Story = {
   args: {
     disabled: true,
-    label: 'Disabled Button',
+    label: 'Button Disabled',
     onClick: () => alert('Disabled Button'),
   },
 };
