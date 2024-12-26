@@ -1,0 +1,29 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as Button from './Button.stories.tsx';
+
+<Meta of={Button} title="Button" />
+
+# Button
+
+Button component with different props.
+
+#### Example
+
+<Canvas of={Button.DefaultButton} />
+
+## Usage
+
+```tsx
+import { Button } from 'template-react-component-library/button';
+
+const SomeComponent = () => {
+  return <Button label={'Submit'} onClick={() => alert('Submitted!')} />;
+};
+
+export default SomeComponent;
+```
+
+#### Arguments
+
+- **label** - The text displayed on the button.
+- **onClick** - A function that is called when the button is clicked.
