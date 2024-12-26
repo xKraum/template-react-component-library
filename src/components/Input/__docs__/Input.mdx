@@ -1,0 +1,36 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as Input from './Input.stories.tsx';
+
+<Meta of={Input} title="Input" />
+
+# Input
+
+Text input component with different props.
+
+#### Example
+
+<Canvas of={Input.InputWithText} />
+
+## Usage
+
+```tsx
+import { Input } from 'template-react-component-library/input';
+
+const SomeComponent = () => {
+  const [value, setValue] = useState('');
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
+
+  return <Input value={value} onChange={handleChange} />;
+};
+
+export default SomeComponent;
+```
+
+#### Arguments
+
+- **value** - The current value of the input field.
+- **placeholder** - The text displayed as a hint inside the input field when it is empty.
+- **onChange** - A function that is called when the value of the input field changes.
