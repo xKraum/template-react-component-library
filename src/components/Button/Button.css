@@ -7,7 +7,19 @@ button.trcl {
   color: rgba(255, 255, 245, 0.86);
   font-size: 16px;
 
-  &:hover {
-    color: rgb(148, 153, 255);
+  /* Button Interaction (Disabled) */
+  &:disabled {
+    color: rgba(255, 255, 255, 0.4);
+    cursor: not-allowed;
+  }
+
+  /* Button Interaction (Not Disabled) */
+  &:not(:disabled) {
+    cursor: pointer;
+
+    /* Hover State */
+    &:hover {
+      color: rgb(148, 153, 255);
+    }
   }
 }
