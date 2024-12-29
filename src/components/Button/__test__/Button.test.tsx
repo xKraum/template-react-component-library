@@ -10,6 +10,6 @@ describe('Button component', () => {
     render(<Button />);
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
-    const testFormat2 =0;
   });
+  const testFormat2 = 0;
 });
