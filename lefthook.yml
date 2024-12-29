@@ -22,4 +22,5 @@ pre-push:
   commands:
     test:
       # Allow push if all tests pass.
+      # The tests run in the all the code committed, staged and unstaged.
       run: npm run test
