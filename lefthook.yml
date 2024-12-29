@@ -1,0 +1,17 @@
+# NOTE: Lefthook creates a backup stash before running the pre-commit hook.
+pre-commit:
+  parallel: false
+  # Stop running commands and scripts if one of them fails.
+  piped: true
+  # Commands that will be executed before commit.
+  commands:
+    1_lint:
+      run: npm run lint
+    2_format:
+      run: npm run format
+    3_update-index:
+      run: git update-index --again
+pre-push:
+  commands:
+    test:
+      run: npm run test
