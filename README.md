@@ -39,7 +39,7 @@ npm run format
 npm run lint
 ```
 
-### Run ESLint without the automatic fixes
+### Run ESLint without automatic fixes
 
 ```
 npm run lint:no-fix
