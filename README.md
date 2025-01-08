@@ -17,6 +17,7 @@ This document includes a comprehensible documentation that explains the purpose 
 - **ESLint** - (Linter)
 - **Prettier** - (Formatter)
 - **Vitest**, **Jest**, **RTL** - (Tests)
+- **Lefthook** - (Git hook manager)
 
 ## Available Scripts
 
@@ -130,3 +131,10 @@ Also, refer to the official documentation on [extending](https://www.typescriptl
 - **Jest-DOM Matchers Integration**: This setup file **extends Vitest's `expect`** with matchers from **Jest-DOM**, such as `.toBeInTheDocument()`.
 - **TypeScript Integration**: Extends TypeScript's `Assertion` interface in **Vitest** to include **Jest-DOM** matchers, ensuring TypeScript type safety for these assertions.
   Also, check the official documentation for [extending matchers](https://vitest.dev/guide/extending-matchers).
+
+### `lefthook.yml`
+
+- **pre-commit**: Runs before each commit to ensure that the staged code is properly linted and formatted. It supports partially staged files.
+- **pre-push**: Executes before each push to ensure that all tests pass successfully.
+
+> **Note**: The `--no-verify` or `-n` flag in the Git command will bypass these hooks.
