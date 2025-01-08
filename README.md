@@ -17,6 +17,7 @@ This document includes a comprehensible documentation that explains the purpose 
 - **ESLint** - (Linter)
 - **Prettier** - (Formatter)
 - **Vitest**, **Jest**, **RTL** - (Tests)
+- **Lefthook** - (Git hook manager)
 
 ## Available Scripts
 
@@ -38,6 +39,12 @@ npm run format
 npm run lint
 ```
 
+### Run ESLint without automatic fixes
+
+```
+npm run lint:no-fix
+```
+
 ### Run tests
 
 ```
@@ -47,13 +54,25 @@ npm run test
 ### Run tests and watch to rerun on code changes
 
 ```
-npm run test-watch
+npm run test:watch
 ```
 
 ### Run tests with a server GUI
 
 ```
-npm run test-gui
+npm run test:gui
+```
+
+### Run Storybook server
+
+```
+npm run storybook
+```
+
+### Build Storybook
+
+```
+npm run storybook:build
 ```
 
 ## Configuration Files
@@ -73,9 +92,12 @@ npm run test-gui
 - `"build": "tsc -p tsconfig.build.json && vite build"` -- Builds the program using TS compiler custom file `tsconfig.build.json` and Vite.
 - `"format": "prettier --write --parser typescript '\*_/_.{ts,tsx}'"` -- Formats TS files using Prettier.
 - `"lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix"` -- Runs ESLint on TS files, ignoring paths in `.gitignore`, and automatically fixes issues.
+- `"lint:no-fix": "eslint . --ext .ts,.tsx --ignore-path .gitignore"` -- Runs ESLint on TS files, ignoring paths in `.gitignore`.
 - `"test": "vitest run"` -- Runs tests using Vitest.
-- `"test-watch": "vitest"` -- Runs Vitest in watch mode, automatically re-running tests on file changes.
-- `"test-gui": "vitest --ui"` -- Runs Vitest with a GUI for viewing test results.
+- `"test:watch": "vitest"` -- Runs Vitest in watch mode, automatically re-running tests on file changes.
+- `"test:gui": "vitest --ui"` -- Runs Vitest with a GUI for viewing test results.
+- `"storybook": "storybook dev -p 6006"` -- Runs Storybook server to see the different components.
+- `"storybook:build": "storybook build"` -- Builds the Storybook files.
 
 #### Dependencies
 
@@ -102,9 +124,17 @@ Also, refer to the official documentation on [extending](https://www.typescriptl
 - **Library Build Configuration**: Specifies how the TypeScript library is bundled, including entry points, output formats, and external dependencies to avoid bundling them (e.g., `peerDependencies`).
 - **DTS Plugin**: Uses `vite-plugin-dts` to automatically generate TypeScript declaration files (.d.ts).
   _**Note**: It uses the custom `tsconfig.build.json` to ensure that declaration files are generated only for the source code, excluding test files from the generated .d.ts files._
+- **CSS Inject Plugin**: Uses `vite-plugin-lib-inject-css` to inject css at the top of each file by using `import`. Support multi-entries build.
 
 ### `setupTests.ts`
 
 - **Jest-DOM Matchers Integration**: This setup file **extends Vitest's `expect`** with matchers from **Jest-DOM**, such as `.toBeInTheDocument()`.
 - **TypeScript Integration**: Extends TypeScript's `Assertion` interface in **Vitest** to include **Jest-DOM** matchers, ensuring TypeScript type safety for these assertions.
   Also, check the official documentation for [extending matchers](https://vitest.dev/guide/extending-matchers).
+
+### `lefthook.yml`
+
+- **pre-commit**: Runs before each commit to ensure that the staged code is properly linted and formatted. It supports partially staged files.
+- **pre-push**: Executes before each push to ensure that all tests pass successfully.
+
+> **Note**: The `--no-verify` or `-n` flag in the Git command will bypass these hooks.
