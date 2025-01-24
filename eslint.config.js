@@ -1,3 +1,4 @@
+import js from '@eslint/js';
 import perfectionist from 'eslint-plugin-perfectionist';
 import globals from 'globals';
 import tsParser from '@typescript-eslint/parser';
@@ -5,6 +6,7 @@ import tsParser from '@typescript-eslint/parser';
 // https://perfectionist.dev/guide/getting-started
 
 export default [
+  js.configs.recommended, // Extends ESLint recommended rules.
   {
     files: [
       'src/**/*.{js,mjs,cjs,jsx,ts,tsx}', // NOTE: Double asterisk (**) matches files in the directory and subdirectories.
