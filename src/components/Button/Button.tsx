@@ -1,9 +1,9 @@
 import './../Input/Input.css';
+import perfectionist from 'eslint-plugin-perfectionist';
 import { render, screen } from '@testing-library/react';
 import { fileURLToPath } from 'url';
-import { MouseEventHandler } from 'react';
 import './Button.css';
-import perfectionist from 'eslint-plugin-perfectionist';
+import { MouseEventHandler } from 'react';
 
 export type ButtonProps = {
   disabled?: boolean;
@@ -14,6 +14,12 @@ export type ButtonProps = {
 const obj = {
   name: 'test',
   surname: 'test',
+};
+
+const p = {
+  get name(){
+    console.log('')
+  }
 };
 
 export const Button = ({

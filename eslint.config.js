@@ -1,12 +1,16 @@
 import perfectionist from 'eslint-plugin-perfectionist';
+import globals from 'globals';
 import tsParser from '@typescript-eslint/parser';
-// eslint.config.js
 // https://medium.com/@1608naman/a-flat-attempt-at-the-eslint-flat-config-393005212d67
 // https://perfectionist.dev/guide/getting-started
 
 export default [
   {
-    // files: ['src/**/*.{js,mjs,cjs,jsx,ts,tsx}', 'eslint.config.js'],
+    files: [
+      'src/**/*.{js,mjs,cjs,jsx,ts,tsx}', // NOTE: Double asterisk (**) matches files in the directory and subdirectories.
+      'eslint.config.js',
+      'setupTests.ts',
+    ],
 
     // PARSER: TypeScript & JSX support using the nearest tsconfig.json.
     // https://eslint.org/docs/latest/use/configure/parser
@@ -19,6 +23,14 @@ export default [
         },
         ecmaVersion: 'latest',
         sourceType: 'module',
+      },
+
+      // GLOBAL VARIABLES: Groups of variables globally available during runtime, like `console` in the browser.
+      // https://eslint.org/docs/latest/use/configure/migration-guide#configuring-language-options
+      globals: {
+        ...globals.browser,
+        ...globals.jest,
+        ...globals.node,
       },
     },
 
