@@ -21,5 +21,5 @@
     "declaration": true, // Generates TS declaration files (.d.ts).
     "types": ["@testing-library/jest-dom"] // Specifies additional global types
   },
-  "include": ["src", "setupTests.ts"] // Include in TS compilation and linting.
+  "include": ["src", "setupTests.ts", "eslint.config.js"] // Include in TS compilation and linting.
 }

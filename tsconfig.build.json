@@ -3,5 +3,10 @@
   "compilerOptions": {
     "types": []
   },
-  "exclude": ["src/**/__docs__", "src/**/__test__", "setupTests.ts"]
+  "exclude": [
+    "src/**/__docs__",
+    "src/**/__test__",
+    "setupTests.ts",
+    "eslint.config.js"
+  ]
 }
