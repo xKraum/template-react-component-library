@@ -3,7 +3,8 @@ import perfectionist from 'eslint-plugin-perfectionist';
 import { render, screen } from '@testing-library/react';
 import { fileURLToPath } from 'url';
 import './Button.css';
-import { MouseEventHandler } from 'react';
+// Test Perfectionist: perfectionist/sort-imports
+import { MouseEventHandler, useState } from 'react';
 
 export type ButtonProps = {
   disabled?: boolean;
@@ -17,6 +18,7 @@ const obj = {
 };
 
 const p = {
+  // Test: eslint recommended: eslint/getter-return
   get name(){
     console.log('')
   }
@@ -26,8 +28,26 @@ export const Button = ({
   disabled = false,
   label = 'Default',
   onClick = undefined,
-}: ButtonProps) => (
-  <button className="trcl" disabled={disabled} onClick={onClick}>
-    {label}
-  </button>
-);
+}: ButtonProps) => {
+  // Test eslint-plugin-react-hooks: react-hooks/rules-of-hooks
+  function Bad() {
+    for (let i = 0; i < 10; i++) {
+      const [asd, setAsd] = useState('')
+    }
+  }
+
+  // Test eslint-plugin-react: react/jsx-no-duplicate-props
+  if (false) {
+    return (
+      <button className="trcl" className="" disabled={disabled} onClick={onClick}>
+        {label}
+      </button>
+    );
+  }
+
+  return (
+    <button className="trcl" disabled={disabled} onClick={onClick}>
+      {label}
+    </button>
+  );
+}
