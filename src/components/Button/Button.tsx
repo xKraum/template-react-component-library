@@ -40,6 +40,9 @@ export const Button = ({
   if (false) {
     return (
       <button className="trcl" className="" disabled={disabled} onClick={onClick}>
+        <a href="foo">Click</a>
+        {/* Test: JSX A11y: jsx-a11y/anchor-is-valid */}
+        <a>Click</a>
         {label}
       </button>
     );
