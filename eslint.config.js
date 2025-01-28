@@ -1,4 +1,4 @@
-import js from '@eslint/js';
+import eslint from '@eslint/js';
 import perfectionist from 'eslint-plugin-perfectionist';
 import globals from 'globals';
 import react from 'eslint-plugin-react';
@@ -11,7 +11,7 @@ import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export default [
-  js.configs.recommended, // Extends ESLint recommended rules.
+  eslint.configs.recommended,
   ...tseslint.configs.recommended,
   react.configs.flat.recommended, // Extends recommended rules for React.
   react.configs.flat['jsx-runtime'], // Use for React 17+ JSX transform. By for example disabling the rule recommended react-in-jsx-scope.
