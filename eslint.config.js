@@ -6,6 +6,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import tseslint from 'typescript-eslint';
 import tsParser from '@typescript-eslint/parser';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
+import storybook from 'eslint-plugin-storybook'
 // https://medium.com/@1608naman/a-flat-attempt-at-the-eslint-flat-config-393005212d67
 // https://perfectionist.dev/guide/getting-started
 
@@ -17,12 +18,16 @@ export default [
   react.configs.flat['jsx-runtime'], // Use for React 17+ JSX transform. By for example disabling the rule recommended react-in-jsx-scope.
   reactHooks.configs['recommended-latest'], // TODO: Update to 5.2.0 release // TODO: Planned to change to from 'recommended-latest' to 'recommended' in 6.0.0.
   jsxA11y.flatConfigs.recommended,
+  ...storybook.configs['flat/recommended'],
+  
   {
     files: [
       'src/**/*.{js,mjs,cjs,jsx,ts,tsx}', // NOTE: Double asterisk (**) matches files in the directory and subdirectories.
       'eslint.config.js',
       'setupTests.ts',
     ],
+
+    ignores: ['!.storybook'],
 
     // PARSER: TypeScript & JSX support using the nearest tsconfig.json.
     // https://eslint.org/docs/latest/use/configure/parser

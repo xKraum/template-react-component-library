@@ -13,11 +13,13 @@ export type ButtonProps = {
 };
 
 const obj = {
-  name: 'test',
   surname: 'test',
+  name: 'test',
 };
 
 const a = '';
+
+// NOTE: Storybook linter can be tested in *.stories.tsx files. For example the recommended rule `eslint/storybook/default-exports`
 
 // Test: eslint recommended: eslint/no-compare-neg-zero
 if (1 === -0) {
