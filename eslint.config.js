@@ -3,13 +3,16 @@ import perfectionist from 'eslint-plugin-perfectionist';
 import globals from 'globals';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
+import tseslint from 'typescript-eslint';
 import tsParser from '@typescript-eslint/parser';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 // https://medium.com/@1608naman/a-flat-attempt-at-the-eslint-flat-config-393005212d67
 // https://perfectionist.dev/guide/getting-started
 
+/** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export default [
   js.configs.recommended, // Extends ESLint recommended rules.
+  ...tseslint.configs.recommended,
   react.configs.flat.recommended, // Extends recommended rules for React.
   react.configs.flat['jsx-runtime'], // Use for React 17+ JSX transform. By for example disabling the rule recommended react-in-jsx-scope.
   reactHooks.configs['recommended-latest'], // TODO: Update to 5.2.0 release // TODO: Planned to change to from 'recommended-latest' to 'recommended' in 6.0.0.

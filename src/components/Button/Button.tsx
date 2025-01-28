@@ -17,12 +17,16 @@ const obj = {
   surname: 'test',
 };
 
-const p = {
-  // Test: eslint recommended: eslint/getter-return
-  get name(){
-    console.log('')
-  }
-};
+const a = '';
+
+// Test: eslint recommended: eslint/no-compare-neg-zero
+if (1 === -0) {
+  // doSomething()...
+}
+
+// Test: typescript-eslint recommended: @typescript-eslint/ban-ts-comment
+// @ts-ignore
+console.log('')
 
 export const Button = ({
   disabled = false,
