@@ -21,8 +21,8 @@ const a = '';
 
 // NOTE: Storybook linter can be tested in *.stories.tsx files. For example the recommended rule `eslint/storybook/default-exports`
 
-// Test: eslint recommended: eslint/no-compare-neg-zero
-if (1 === -0) {
+// Test: eslint recommended: eslint/no-compare-neg-zero and eslint/eqeqeq.
+if (1 == -0) {
   // doSomething()...
 }
 

@@ -17,6 +17,7 @@ export default [
     ignores: ['!.storybook'], // Ensure the `.storybook` directory is not ignored.
   },
 
+  // EXTENDS: Extends specific set of rules (like recommended) from the different plugins.
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   react.configs.flat.recommended, // Extends recommended rules for React.
@@ -24,7 +25,7 @@ export default [
   reactHooks.configs['recommended-latest'], // TODO: Update to 5.2.0 release // TODO: Planned to change to from 'recommended-latest' to 'recommended' in 6.0.0.
   jsxA11y.flatConfigs.recommended,
   ...storybook.configs['flat/recommended'],
-  
+
   {
     files: [
       'src/**/*.{js,mjs,cjs,jsx,ts,tsx}', // NOTE: Double asterisk (**) matches files in the directory and subdirectories.
@@ -33,7 +34,7 @@ export default [
     ],
 
     // PARSER: TypeScript & JSX support using the nearest tsconfig.json.
-    // https://eslint.org/docs/latest/use/configure/parser
+    // More details: https://eslint.org/docs/latest/use/configure/parser
     languageOptions: {
       parser: tsParser,
       parserOptions: {
@@ -46,7 +47,7 @@ export default [
       },
 
       // GLOBAL VARIABLES: Groups of variables globally available during runtime, like `console` in the browser.
-      // https://eslint.org/docs/latest/use/configure/migration-guide#configuring-language-options
+      // More details: https://eslint.org/docs/latest/use/configure/migration-guide#configuring-language-options
       globals: {
         ...globals.browser,
         ...globals.jest,
@@ -54,16 +55,24 @@ export default [
       },
     },
 
-    // PLUGINS: Set of rules that can be individually applied in the `rules` object.
-    // https://eslint.org/docs/latest/use/configure/plugins
+    // PLUGINS: Declare plugins here to make their rules available in the `rules` object.
+    // More details: https://eslint.org/docs/latest/use/configure/plugins
     plugins: {
       perfectionist,
     },
 
-    // RULES: Defines the specific linting rules, can be included rules added in the `plugins` object.
-    // https://eslint.org/docs/latest/use/core-concepts/#rules
+    // RULES: Defines specific linting rules, their severity, and other customizations.
+    // NOTE: These rules should come from the installed plugins defined in the `plugins` object.
+    // More details: https://eslint.org/docs/latest/use/core-concepts/#rules
     rules: {
-      // NOTE: 0 = Off | 1 = Warn | 2 = Error
+      // NOTE: The severity levels are off (0), warning (1), and error (2).
+
+      // [ESLint Rules]
+      // Enforces the use of `===` and `!==`.
+      eqeqeq: 2,
+
+      // [Perfectionist Rules]
+      // Enforces to import modules alphabetically.
       'perfectionist/sort-imports': 2,
     },
   },
