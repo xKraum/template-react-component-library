@@ -1,17 +1,22 @@
 import eslint from '@eslint/js';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 import perfectionist from 'eslint-plugin-perfectionist';
-import globals from 'globals';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import tseslint from 'typescript-eslint';
+import storybook from 'eslint-plugin-storybook';
 import tsParser from '@typescript-eslint/parser';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import storybook from 'eslint-plugin-storybook'
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 // https://medium.com/@1608naman/a-flat-attempt-at-the-eslint-flat-config-393005212d67
 // https://perfectionist.dev/guide/getting-started
 
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export default [
+  {
+    // NOTE: Added in a separate object to apply globally because only global `ignores` can match directories.
+    ignores: ['!.storybook'], // Ensure the `.storybook` directory is not ignored.
+  },
+
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   react.configs.flat.recommended, // Extends recommended rules for React.
@@ -26,8 +31,6 @@ export default [
       'eslint.config.js',
       'setupTests.ts',
     ],
-
-    ignores: ['!.storybook'],
 
     // PARSER: TypeScript & JSX support using the nearest tsconfig.json.
     // https://eslint.org/docs/latest/use/configure/parser
