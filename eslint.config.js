@@ -1,6 +1,7 @@
 import eslint from '@eslint/js';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import perfectionist from 'eslint-plugin-perfectionist';
+import prettierRecommended from 'eslint-plugin-prettier/recommended';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import storybook from 'eslint-plugin-storybook';
@@ -25,6 +26,7 @@ export default [
   reactHooks.configs['recommended-latest'], // TODO: Update to 5.2.0 release // TODO: Planned to change to from 'recommended-latest' to 'recommended' in 6.0.0.
   jsxA11y.flatConfigs.recommended,
   ...storybook.configs['flat/recommended'],
+  prettierRecommended,
 
   {
     files: [

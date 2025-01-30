@@ -17,7 +17,8 @@ const obj = {
   name: 'test',
 };
 
-const a = '';
+// Test: Prettier Insert `·`: eslint/prettier/prettier
+const a ='';
 
 // NOTE: Storybook linter can be tested in *.stories.tsx files. For example the recommended rule `eslint/storybook/default-exports`
 
