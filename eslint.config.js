@@ -74,8 +74,39 @@ export default [
       eqeqeq: 2,
 
       // [Perfectionist Rules]
-      // Enforces to import modules alphabetically.
-      'perfectionist/sort-imports': 2,
+      // IMPORTS ORDER: Enforces a strict and consistent order for import statements in the codebase.
+      // NOTE: Disable `source.organizeImports` on `codeActionsOnSave` in VSCode Settings to avoid conflicts.
+      'sort/imports': 0, // Note: Disable ESLint's rule to avoid conflicts.
+      'perfectionist/sort-imports': [
+        2,
+        {
+          // Natural order. Example: 'item2' < 'item10'.
+          type: 'natural',
+
+          // NOTE: Default values explicitly set for clarity.
+          newlinesBetween: 'always',
+          order: 'asc',
+          ignoreCase: true,
+          groups: [
+            // Built-in or external installed modules. Example: import path from 'path' || import axios from 'axios'
+            ['builtin', 'external'],
+            // Internal types that are not in the same or parent directory. Example: import type { User } from '~/users'
+            'internal-type',
+            // Internal modules that are not in the same or parent directory. Example: import Button from '~/components/Button'
+            'internal',
+            // Parent or current directory types. Example: import type { FooProps } from '../Foo' || './Foo' || './index.d.ts'
+            ['parent-type', 'sibling-type', 'index-type'],
+            // Parent or current directory modules. Example: import foo from '../utils/foo' || './foo' || '.'
+            ['parent', 'sibling', 'index'],
+            // Side effect script files. Example: import './set-production-env.js'
+            'side-effect',
+            // Style files. Example: import './styles.scss' || import styles from './index.module.css'
+            'side-effect-style',
+            { newlinesBetween: 'never' },
+            'style',
+          ],
+        },
+      ],
     },
   },
 ];

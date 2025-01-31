@@ -12,7 +12,7 @@ export type ButtonProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-const obj = {
+const obj = { 
   surname: 'test',
   name: 'test',
 };
@@ -29,7 +29,7 @@ if (1 == -0) {
 
 // Test: typescript-eslint recommended: @typescript-eslint/ban-ts-comment
 // @ts-ignore
-console.log('')
+console.log('');
 
 export const Button = ({
   disabled = false,
@@ -39,14 +39,19 @@ export const Button = ({
   // Test eslint-plugin-react-hooks: react-hooks/rules-of-hooks
   function Bad() {
     for (let i = 0; i < 10; i++) {
-      const [asd, setAsd] = useState('')
+      const [asd, setAsd] = useState('');
     }
   }
 
   // Test eslint-plugin-react: react/jsx-no-duplicate-props
   if (false) {
     return (
-      <button className="trcl" className="" disabled={disabled} onClick={onClick}>
+      <button
+        className="trcl"
+        className=""
+        disabled={disabled}
+        onClick={onClick}
+      >
         <a href="foo">Click</a>
         {/* Test: JSX A11y: jsx-a11y/anchor-is-valid */}
         <a>Click</a>
@@ -60,4 +65,4 @@ export const Button = ({
       {label}
     </button>
   );
-}
+};
