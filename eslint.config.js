@@ -1,15 +1,19 @@
+/* eslint-disable perfectionist/sort-objects */
 import eslint from '@eslint/js';
+import tsParser from '@typescript-eslint/parser';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import perfectionist from 'eslint-plugin-perfectionist';
 import prettierRecommended from 'eslint-plugin-prettier/recommended';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import storybook from 'eslint-plugin-storybook';
-import tsParser from '@typescript-eslint/parser';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
-// https://medium.com/@1608naman/a-flat-attempt-at-the-eslint-flat-config-393005212d67
-// https://perfectionist.dev/guide/getting-started
+
+import {
+  PERFECTIONIST_SORT_OBJECTS,
+  PERFECTIONIST_SORT_TYPES,
+} from './eslint.constants.mjs';
 
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export default [
@@ -74,7 +78,7 @@ export default [
       eqeqeq: 2,
 
       // [Perfectionist Rules]
-      // IMPORTS ORDER: Enforces a strict and consistent order for import statements in the codebase.
+      // IMPORTS ORDER: Enforces a strict and consistent order for import statements.
       // NOTE: Disable `source.organizeImports` on `codeActionsOnSave` in VSCode Settings to avoid conflicts.
       'sort/imports': 0, // Note: Disable ESLint's rule to avoid conflicts.
       'perfectionist/sort-imports': [
@@ -107,6 +111,14 @@ export default [
           ],
         },
       ],
+      'perfectionist/sort-named-imports': [2, { type: 'natural' }],
+
+      // OBJECTS ORDER: Enforces a strict and consistent order for object, types and other declarations.
+      'perfectionist/sort-object-types': [2, PERFECTIONIST_SORT_TYPES],
+      'perfectionist/sort-union-types': [2, { type: 'natural' }],
+      'perfectionist/sort-interfaces': [2, PERFECTIONIST_SORT_TYPES],
+      'perfectionist/sort-objects': [2, PERFECTIONIST_SORT_OBJECTS],
+      'perfectionist/sort-enums': [2, { type: 'natural' }],
     },
   },
 ];

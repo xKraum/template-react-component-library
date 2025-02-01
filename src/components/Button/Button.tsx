@@ -12,10 +12,66 @@ export type ButtonProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-const obj = { 
-  surname: 'test',
-  name: 'test',
+type Test = {
+  firstName: string;
+  lastName: string;
+  id: number;
+  isAvailable2: boolean;
+  phone?: number;
+  hasAvailability?: boolean;
+  userId: number;
+  identifier: string;
+  someArray: string[];
+  address1?: {
+    city: string;
+  };
+  address2: {
+    city: string;
+    country?: string;
+    street: string;
+  };
+  isAvailable1?: boolean;
+  onAdd?: (id: number) => void;
+  onUpdate: (id: number) => void;
+  optionalMethod?: () => {
+    property: string;
+  };
 };
+
+const objectTest: Test = {
+  firstName: 'test',
+  lastName: 'test',
+  id: 1,
+  isAvailable2: true,
+  userId: 1,
+  identifier: 'test',
+  onUpdate: (id: number) => {
+    console.log(id);
+  },
+  someArray: ['test'],
+  address1: {
+    city: 'test',
+  },
+  address2: {
+    city: 'test',
+    street: 'test',
+  },
+  onAdd: (id: number) => {
+    console.log(id);
+  },
+};
+
+const { id, address1, firstName, lastName, onAdd, onUpdate } = objectTest;
+
+type UserRole = 'user' | 'guest' | 'admin' | 'editor';
+
+const enum VALUES {
+  a3 = 'a3',
+  A10 = 'A10',
+  A2 = 'A2',
+  C = 'C',
+  B = 'B',
+}
 
 // Test: Prettier Insert `·`: eslint/prettier/prettier
 const a ='';
