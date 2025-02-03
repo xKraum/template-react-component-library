@@ -11,6 +11,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 import {
+  booleanPrefixes,
   perfectionistSortObjects,
   perfectionistSortTypes,
 } from './eslint.constants.mjs';
@@ -167,7 +168,7 @@ export default [
           selector: 'variable',
           types: ['boolean'],
           format: ['PascalCase'],
-          prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+          prefix: booleanPrefixes,
           leadingUnderscore: 'allow',
         },
         {

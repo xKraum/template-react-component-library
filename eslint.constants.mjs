@@ -1,3 +1,5 @@
+export const booleanPrefixes = ['is', 'should', 'has', 'can', 'did', 'will'];
+
 const perfectionistSortObjectCustomGroups = {
   id: {
     groupName: 'id',
@@ -7,7 +9,7 @@ const perfectionistSortObjectCustomGroups = {
   flag: {
     groupName: 'flag',
     selector: 'property',
-    elementNamePattern: '^(?:is|should|has|can|did|will)[A-Z].*$',
+    elementNamePattern: `^(?:${booleanPrefixes.join('|')})[A-Z].*$`, // Example: /^(?:a|b|c|)[A-Z].*$/
   },
 };
 
