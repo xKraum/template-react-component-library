@@ -65,6 +65,7 @@ export default [
     // More details: https://eslint.org/docs/latest/use/configure/plugins
     plugins: {
       perfectionist,
+      react,
     },
 
     // RULES: Defines specific linting rules, their severity, and other customizations.
@@ -73,11 +74,118 @@ export default [
     rules: {
       // NOTE: The severity levels are off (0), warning (1), and error (2).
 
-      // [ESLint Rules]
+      // [ESLINT RULES]
       // Enforces the use of `===` and `!==`.
       eqeqeq: 2,
 
-      // [Perfectionist Rules]
+      // Enforces the use of curly {} in block statements (if, else, for, while...).
+      curly: [2, 'all'],
+
+      // Disallows the use of undeclared variables.
+      'no-undef': 2,
+
+      // Enforces no braces when they can be omitted. Incorrect: const foo = (x) => { return x; } Correct: const foo = (x) => x;
+      'arrow-body-style': [2, 'as-needed'],
+
+      // [REACT RULES]
+      // Enforces arrow functions for Components.
+      'react/function-component-definition': [
+        2,
+        {
+          namedComponents: 'arrow-function',
+          unnamedComponents: 'arrow-function',
+        },
+      ],
+
+      // Enforces using JSX only in *.tsx files.
+      'react/jsx-filename-extension': [2, { extensions: ['.tsx'] }],
+
+      // Enforces non-required props to define their default values in the function arguments/parameters.
+      // Example: const Component = ({ optionalProp = 'default' }: ComponentProps) => {}
+      'react/require-default-props': [
+        2,
+        {
+          functions: 'defaultArguments',
+        },
+      ],
+
+      // Allows spreading in JSX components (<MyCustomComponent {...props} />) and forbid on everything else (HTML tags, etc.)
+      'react/jsx-props-no-spreading': [
+        2,
+        {
+          custom: 'ignore',
+        },
+      ],
+
+      // Enforces the way of sorting the component props.
+      // Alphabetical case insensitive order, React reserved props before, callbacks after.
+      // Example: <Component dangerouslySetInnerHTML={...} firstName="John" lastName="Doe" onClick={...} />
+      'react/jsx-sort-props': [
+        2,
+        {
+          callbacksLast: true,
+          ignoreCase: true,
+          reservedFirst: true,
+        },
+      ],
+
+      // [TYPESCRIPT RULES]
+      // Uses the TypeScript no-unused-vars rule instead of the base one.
+      'no-unused-vars': 0,
+      '@typescript-eslint/no-unused-vars': [
+        1,
+        {
+          // Allow function arguments that start with _
+          argsIgnorePattern: '^_',
+          // Allow catch arguments that start with _
+          caughtErrorsIgnorePattern: '^_',
+          // Allow sibling variables of ...rest in destructure objects.
+          ignoreRestSiblings: true,
+          // Allow variables that start with _
+          varsIgnorePattern: '^_',
+        },
+      ],
+
+      // Uses the TypeScript no-shadow rule instead of the base one.
+      // Disallows a local variable to have the same name as a variable in its containing scope.
+      'no-shadow': 0,
+      '@typescript-eslint/no-shadow': 2,
+
+      // Uses the TypeScript no-use-before-define rule instead of the base one.
+      // Disallows the use of variables before they are defined.
+      '@typescript-eslint/no-use-before-define': 2,
+      'no-use-before-define': 0,
+
+      // Enforces the naming conventions for some cases across the code.
+      // Variables must be in camelCase or UPPER_CASE. Boolean variables must have a verb prefixed. (Normal variables).
+      // Function variables must be in camelCase or PascalCase (used for creating Functions and Components).
+      // Types like (class, enum, interface, typeAlias, typeParameter) must be in PascalCase. Interfaces must be prefixed with 'I'.
+      // Functions declared using the 'function' keyword must be in camelCase.
+      '@typescript-eslint/naming-convention': [
+        2,
+        {
+          selector: 'variable',
+          types: ['boolean'],
+          format: ['PascalCase'],
+          prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+          leadingUnderscore: 'allow',
+        },
+        {
+          selector: 'typeLike',
+          format: ['PascalCase'],
+        },
+        {
+          selector: 'interface',
+          format: ['PascalCase'],
+          prefix: ['I'],
+        },
+        {
+          selector: 'function',
+          format: ['camelCase'],
+        },
+      ],
+
+      // [PERFECTIONIST RULES]
       // IMPORTS ORDER: Enforces a strict and consistent order for import statements.
       // NOTE: Disable `source.organizeImports` on `codeActionsOnSave` in VSCode Settings to avoid conflicts.
       'sort/imports': 0, // Note: Disable ESLint's rule to avoid conflicts.

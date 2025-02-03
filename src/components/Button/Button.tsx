@@ -1,4 +1,5 @@
 import './../Input/Input.css';
+import { Input, InputProps } from '../Input/Input.tsx';
 import perfectionist from 'eslint-plugin-perfectionist';
 import { render, screen } from '@testing-library/react';
 import { fileURLToPath } from 'url';
@@ -61,7 +62,7 @@ const objectTest: Test = {
   },
 };
 
-const { id, address1, firstName, lastName, onAdd, onUpdate } = objectTest;
+const { firstName, address1, id, lastName, onAdd, onUpdate } = objectTest;
 
 type UserRole = 'user' | 'guest' | 'admin' | 'editor';
 
@@ -74,7 +75,28 @@ const enum VALUES {
 }
 
 // Test: Prettier Insert `·`: eslint/prettier/prettier
+// Test: Allowed unused vars must match /^_/u.eslint@typescript-eslint/no-unused-vars
 const a ='';
+
+// TEST: typescript-eslint/no-shadow
+let x = 10;
+function foo() {
+  // TEST ESLint no-undef and curly
+  if (true)
+    console.log(y);
+
+  let x = 20;
+
+  // @typescript-eslint/no-use-before-define
+  console.log(z);
+  const z = true;
+}
+
+const foo = {
+  bar: "baz",
+  bar: "qux"
+};
+
 
 // NOTE: Storybook linter can be tested in *.stories.tsx files. For example the recommended rule `eslint/storybook/default-exports`
 
@@ -87,26 +109,58 @@ if (1 == -0) {
 // @ts-ignore
 console.log('');
 
+// TEST: react/function-component-definition
+// TEST: react/require-default-props
+const Component = function ({ optionalAttribute }: { optionalAttribute?: string }) {
+  return <div>{props.content}</div>;
+};
+
+// TEST: JSX A11y Recommended: jsx-a11y/label-has-associated-control
+const getHtmlFor = () => {
+  return (
+    <>
+      <label>Username</label>
+      <input id="username" type="text" />
+    </>
+  );
+};
+
+// TEST: react/jsx-props-no-spreading
+const getSpreadError = ({ disabled, ...rest }: InputProps) => {
+  return (
+    <>
+      <Input {...rest} />
+      <input {...rest} />
+    </>
+  );
+};
+
+const isTestIt = false;
+
+const foo = (x) => { return x; }
+const foo2 = (x) => x;
+
 export const Button = ({
   disabled = false,
   label = 'Default',
   onClick = undefined,
 }: ButtonProps) => {
   // Test eslint-plugin-react-hooks: react-hooks/rules-of-hooks
-  function Bad() {
+  const Bad = () => {
     for (let i = 0; i < 10; i++) {
       const [asd, setAsd] = useState('');
     }
-  }
+  };
 
   // Test eslint-plugin-react: react/jsx-no-duplicate-props
   if (false) {
     return (
       <button
-        className="trcl"
-        className=""
-        disabled={disabled}
-        onClick={onClick}
+      className="trcl"
+      disabled={disabled}
+      another=""
+      className=""
+      onClick={onClick}
       >
         <a href="foo">Click</a>
         {/* Test: JSX A11y: jsx-a11y/anchor-is-valid */}

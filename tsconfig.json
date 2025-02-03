@@ -15,7 +15,7 @@
 
     /* Linting */
     "strict": true, // Enables strict type checking.
-    "noUnusedLocals": true, // Enforces the use of all local variables.
+    "noUnusedLocals": false, // Handled by `@typescript-eslint/no-unused-vars`.
     "noUnusedParameters": true, // Enforces the use of all function parameters.
     "noFallthroughCasesInSwitch": true, // Enforces using 'break' between switch cases.
     "declaration": true, // Generates TS declaration files (.d.ts).
