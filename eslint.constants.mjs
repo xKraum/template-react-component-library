@@ -1,4 +1,4 @@
-const PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS = {
+const perfectionistSortObjectCustomGroups = {
   id: {
     groupName: 'id',
     selector: 'property',
@@ -11,12 +11,12 @@ const PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS = {
   },
 };
 
-const PERFECTIONIST_SORT_TYPES = {
+export const perfectionistSortTypes = {
   type: 'natural',
   order: 'asc',
   ignoreCase: true,
   groups: [
-    PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS.id.groupName,
+    perfectionistSortObjectCustomGroups.id.groupName,
     'required-property',
     'required-multiline-property',
     'optional-property',
@@ -27,37 +27,35 @@ const PERFECTIONIST_SORT_TYPES = {
     'optional-method',
   ],
   customGroups: [
-    PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS.id,
+    perfectionistSortObjectCustomGroups.id,
     {
-      ...PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS.flag,
-      groupName: `required-${PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS.flag.groupName}`,
+      ...perfectionistSortObjectCustomGroups.flag,
+      groupName: `required-${perfectionistSortObjectCustomGroups.flag.groupName}`,
       modifiers: ['required'],
     },
     {
-      ...PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS.flag,
-      groupName: `optional-${PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS.flag.groupName}`,
+      ...perfectionistSortObjectCustomGroups.flag,
+      groupName: `optional-${perfectionistSortObjectCustomGroups.flag.groupName}`,
       modifiers: ['optional'],
     },
   ],
 };
 
-const PERFECTIONIST_SORT_OBJECTS = {
-  ...PERFECTIONIST_SORT_TYPES,
+export const perfectionistSortObjects = {
+  ...perfectionistSortTypes,
   objectDeclarations: true,
   destructuredObjects: {
     groups: true,
   },
   groups: [
-    PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS.id.groupName,
+    perfectionistSortObjectCustomGroups.id.groupName,
     'property',
     'multiline-property',
-    PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS.flag.groupName,
+    perfectionistSortObjectCustomGroups.flag.groupName,
     'method',
   ],
   customGroups: [
-    PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS.id,
-    PERFECTIONIST_SORT_OBJECT_CUSTOM_GROUPS.flag,
+    perfectionistSortObjectCustomGroups.id,
+    perfectionistSortObjectCustomGroups.flag,
   ],
 };
-
-export { PERFECTIONIST_SORT_TYPES, PERFECTIONIST_SORT_OBJECTS };

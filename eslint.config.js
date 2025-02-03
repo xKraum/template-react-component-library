@@ -11,8 +11,8 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 import {
-  PERFECTIONIST_SORT_OBJECTS,
-  PERFECTIONIST_SORT_TYPES,
+  perfectionistSortObjects,
+  perfectionistSortTypes,
 } from './eslint.constants.mjs';
 
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
@@ -114,10 +114,10 @@ export default [
       'perfectionist/sort-named-imports': [2, { type: 'natural' }],
 
       // OBJECTS ORDER: Enforces a strict and consistent order for object, types and other declarations.
-      'perfectionist/sort-object-types': [2, PERFECTIONIST_SORT_TYPES],
+      'perfectionist/sort-object-types': [2, perfectionistSortTypes],
       'perfectionist/sort-union-types': [2, { type: 'natural' }],
-      'perfectionist/sort-interfaces': [2, PERFECTIONIST_SORT_TYPES],
-      'perfectionist/sort-objects': [2, PERFECTIONIST_SORT_OBJECTS],
+      'perfectionist/sort-interfaces': [2, perfectionistSortTypes],
+      'perfectionist/sort-objects': [2, perfectionistSortObjects],
       'perfectionist/sort-enums': [2, { type: 'natural' }],
     },
   },
