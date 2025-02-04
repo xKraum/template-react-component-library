@@ -21,6 +21,13 @@ export default [
   {
     // NOTE: Added in a separate object to apply globally because only global `ignores` can match directories.
     ignores: ['!.storybook'], // Ensure the `.storybook` directory is not ignored.
+
+    // SETTINGS: Detect React version automatically for `eslint-plugin-react` rules.
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
   },
 
   // EXTENDS: Extends specific set of rules (like recommended) from the different plugins.
