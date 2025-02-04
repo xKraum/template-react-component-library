@@ -18,11 +18,13 @@ import {
 
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export default [
+  // NOTE: Added in a separate object to apply globally because only global `ignores` can match directories.
   {
-    // NOTE: Added in a separate object to apply globally because only global `ignores` can match directories.
-    ignores: ['!.storybook'], // Ensure the `.storybook` directory is not ignored.
+    ignores: ['!.storybook', 'dist'], // Ensure the `.storybook` directory is not ignored and the `dist` directory is ignored.
+  },
 
     // SETTINGS: Detect React version automatically for `eslint-plugin-react` rules.
+  {
     settings: {
       react: {
         version: 'detect',
