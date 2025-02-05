@@ -91,8 +91,8 @@ npm run storybook:build
 
 - `"build": "tsc -p tsconfig.build.json && vite build"` -- Builds the program using TS compiler custom file `tsconfig.build.json` and Vite.
 - `"format": "prettier --write --parser typescript '\*_/_.{ts,tsx}'"` -- Formats TS files using Prettier.
-- `"lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix"` -- Runs ESLint on TS files, ignoring paths in `.gitignore`, and automatically fixes issues.
-- `"lint:no-fix": "eslint . --ext .ts,.tsx --ignore-path .gitignore"` -- Runs ESLint on TS files, ignoring paths in `.gitignore`.
+- `"lint": "eslint --fix"` -- Runs ESLint on TS files, ignoring paths in `.gitignore`, and automatically fixes issues.
+- `"lint:no-fix": "eslint"` -- Runs ESLint on TS files, ignoring paths in `.gitignore`.
 - `"test": "vitest run"` -- Runs tests using Vitest.
 - `"test:watch": "vitest"` -- Runs Vitest in watch mode, automatically re-running tests on file changes.
 - `"test:gui": "vitest --ui"` -- Runs Vitest with a GUI for viewing test results.
