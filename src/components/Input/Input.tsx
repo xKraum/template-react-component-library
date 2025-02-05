@@ -1,10 +1,11 @@
 import { ChangeEventHandler } from 'react';
+
 import './Input.css';
 
 export type InputProps = {
-  placeholder?: string;
-  value: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  value: string;
+  placeholder?: string;
 };
 
 export const Input = ({ onChange, placeholder = '', value }: InputProps) => (
