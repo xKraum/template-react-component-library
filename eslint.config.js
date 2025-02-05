@@ -18,12 +18,15 @@ import {
 
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export default [
-  // NOTE: Added in a separate object to apply globally because only global `ignores` can match directories.
+  // FILES: A config object only applies to a file if the filename matches a pattern in files (or if there is no files key, in which case it will match all files).
+  // RULES: The severity levels are off (0), warning (1), and error (2).
+
+  // GLOBAL IGNORES: Added in a separate object to apply globally and be able to match directories. Only global `ignores` can match directories.
   {
-    ignores: ['!.storybook', 'dist'], // Ensure the `.storybook` directory is not ignored and the `dist` directory is ignored.
+    ignores: ['dist', 'build', '!.storybook'], // Ignore `dist` and `build` directories but prevent ignoring `.storybook`.
   },
 
-    // SETTINGS: Detect React version automatically for `eslint-plugin-react` rules.
+  // SETTINGS: Detect React version automatically for `eslint-plugin-react` rules.
   {
     settings: {
       react: {
@@ -35,26 +38,22 @@ export default [
   // EXTENDS: Extends specific set of rules (like recommended) from the different plugins.
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
-  react.configs.flat.recommended, // Extends recommended rules for React.
-  react.configs.flat['jsx-runtime'], // Use for React 17+ JSX transform. By for example disabling the rule recommended react-in-jsx-scope.
-  reactHooks.configs['recommended-latest'], // TODO: Update to 5.2.0 release // TODO: Planned to change to from 'recommended-latest' to 'recommended' in 6.0.0.
+  react.configs.flat.recommended,
+  react.configs.flat['jsx-runtime'], // Disables some React recommended rules like `react-in-jsx-scope` not needed in React 17+.
+  reactHooks.configs['recommended-latest'], // TODO: Update to 5.2.0 release // NOTE: Planned to change to from 'recommended-latest' to 'recommended' in 6.0.0.
   jsxA11y.flatConfigs.recommended,
   ...storybook.configs['flat/recommended'],
   prettierRecommended,
 
+  // TYPESCRIPT: Specific rules for TypeScript files in separate object to prevent parser conflicts with JS files.
   {
-    files: [
-      'src/**/*.{js,mjs,cjs,jsx,ts,tsx}', // NOTE: Double asterisk (**) matches files in the directory and subdirectories.
-      'eslint.config.js',
-      'setupTests.ts',
-    ],
-
+    ignores: ['*.{js,mjs,jsx}'], // Ignore JavaScript files.
     // PARSER: TypeScript & JSX support using the nearest tsconfig.json.
     // More details: https://eslint.org/docs/latest/use/configure/parser
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        project: true, // Source file being linted should use type information based on the nearest tsconfig.json.
+        project: true, // Linted files will use the type information of the nearest `tsconfig.json`.
         ecmaFeatures: {
           jsx: true,
         },
@@ -71,74 +70,7 @@ export default [
       },
     },
 
-    // PLUGINS: Declare plugins here to make their rules available in the `rules` object.
-    // More details: https://eslint.org/docs/latest/use/configure/plugins
-    plugins: {
-      perfectionist,
-      react,
-    },
-
-    // RULES: Defines specific linting rules, their severity, and other customizations.
-    // NOTE: These rules should come from the installed plugins defined in the `plugins` object.
-    // More details: https://eslint.org/docs/latest/use/core-concepts/#rules
     rules: {
-      // NOTE: The severity levels are off (0), warning (1), and error (2).
-
-      // [ESLINT RULES]
-      // Enforces the use of `===` and `!==`.
-      eqeqeq: 2,
-
-      // Enforces the use of curly {} in block statements (if, else, for, while...).
-      curly: [2, 'all'],
-
-      // Disallows the use of undeclared variables.
-      'no-undef': 2,
-
-      // Enforces no braces when they can be omitted. Incorrect: const foo = (x) => { return x; } Correct: const foo = (x) => x;
-      'arrow-body-style': [2, 'as-needed'],
-
-      // [REACT RULES]
-      // Enforces arrow functions for Components.
-      'react/function-component-definition': [
-        2,
-        {
-          namedComponents: 'arrow-function',
-          unnamedComponents: 'arrow-function',
-        },
-      ],
-
-      // Enforces using JSX only in *.tsx files.
-      'react/jsx-filename-extension': [2, { extensions: ['.tsx'] }],
-
-      // Enforces non-required props to define their default values in the function arguments/parameters.
-      // Example: const Component = ({ optionalProp = 'default' }: ComponentProps) => {}
-      'react/require-default-props': [
-        2,
-        {
-          functions: 'defaultArguments',
-        },
-      ],
-
-      // Allows spreading in JSX components (<MyCustomComponent {...props} />) and forbid on everything else (HTML tags, etc.)
-      'react/jsx-props-no-spreading': [
-        2,
-        {
-          custom: 'ignore',
-        },
-      ],
-
-      // Enforces the way of sorting the component props.
-      // Alphabetical case insensitive order, React reserved props before, callbacks after.
-      // Example: <Component dangerouslySetInnerHTML={...} firstName="John" lastName="Doe" onClick={...} />
-      'react/jsx-sort-props': [
-        2,
-        {
-          callbacksLast: true,
-          ignoreCase: true,
-          reservedFirst: true,
-        },
-      ],
-
       // [TYPESCRIPT RULES]
       // Uses the TypeScript no-unused-vars rule instead of the base one.
       'no-unused-vars': 0,
@@ -192,6 +124,75 @@ export default [
         {
           selector: 'function',
           format: ['camelCase'],
+        },
+      ],
+    },
+  },
+
+  {
+    // PLUGINS: Declare plugins here to make their rules available in the `rules` object.
+    // More details: https://eslint.org/docs/latest/use/configure/plugins
+    plugins: {
+      perfectionist,
+      react,
+    },
+
+    // RULES: Defines specific linting rules, their severity, and other customizations.
+    // NOTE: These rules should come from the installed plugins defined in the `plugins` object.
+    // More details: https://eslint.org/docs/latest/use/core-concepts/#rules
+    rules: {
+      // [ESLINT RULES]
+      // Enforces the use of `===` and `!==`.
+      eqeqeq: 2,
+
+      // Enforces the use of curly {} in block statements (if, else, for, while...).
+      curly: [2, 'all'],
+
+      // Disallows the use of undeclared variables.
+      'no-undef': 2,
+
+      // Enforces no braces when they can be omitted. Incorrect: const foo = (x) => { return x; } Correct: const foo = (x) => x;
+      'arrow-body-style': [2, 'as-needed'],
+
+      // [REACT RULES]
+      // Enforces arrow functions for Components.
+      'react/function-component-definition': [
+        2,
+        {
+          namedComponents: 'arrow-function',
+          unnamedComponents: 'arrow-function',
+        },
+      ],
+
+      // Enforces using JSX only in *.tsx files.
+      'react/jsx-filename-extension': [2, { extensions: ['.tsx'] }],
+
+      // Enforces non-required props to define their default values in the function arguments/parameters.
+      // Example: const Component = ({ optionalProp = 'default' }: ComponentProps) => {}
+      'react/require-default-props': [
+        2,
+        {
+          functions: 'defaultArguments',
+        },
+      ],
+
+      // Allows spreading in JSX components (<MyCustomComponent {...props} />) and forbid on everything else (HTML tags, etc.)
+      'react/jsx-props-no-spreading': [
+        2,
+        {
+          custom: 'ignore',
+        },
+      ],
+
+      // Enforces the way of sorting the component props.
+      // Alphabetical case insensitive order, React reserved props before, callbacks after.
+      // Example: <Component dangerouslySetInnerHTML={...} firstName="John" lastName="Doe" onClick={...} />
+      'react/jsx-sort-props': [
+        2,
+        {
+          callbacksLast: true,
+          ignoreCase: true,
+          reservedFirst: true,
         },
       ],
 
