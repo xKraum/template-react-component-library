@@ -23,7 +23,7 @@ export default [
 
   // GLOBAL IGNORES: Added in a separate object to apply globally and be able to match directories. Only global `ignores` can match directories.
   {
-    ignores: ['dist', 'build', '!.storybook'], // Ignore `dist` and `build` directories but prevent ignoring `.storybook`.
+    ignores: ['dist', 'build', 'storybook-static', '!.storybook'], // Ignore some directories but prevent ignoring `.storybook`.
   },
 
   // SETTINGS: Detect React version automatically for `eslint-plugin-react` rules.
