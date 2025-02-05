@@ -23,8 +23,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json && vite build",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
-    "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix",
-    "lint:no-fix": "eslint . --ext .ts,.tsx --ignore-path .gitignore",
+    "lint": "eslint --fix",
+    "lint:no-fix": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:gui": "vitest --ui",
