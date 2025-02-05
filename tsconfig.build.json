@@ -3,10 +3,6 @@
   "compilerOptions": {
     "types": []
   },
-  "exclude": [
-    "src/**/__docs__",
-    "src/**/__test__",
-    "setupTests.ts",
-    "eslint.config.js"
-  ]
+  "include": ["src"], // Replace `include` value to build only from the `src` directory.
+  "exclude": ["src/**/__docs__", "src/**/__test__"]
 }
