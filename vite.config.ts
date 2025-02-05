@@ -4,9 +4,10 @@ import { defineConfig, UserConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import type { InlineConfig } from 'vitest/node';
+
 import { peerDependencies } from './package.json';
 
-interface VitestConfigExport extends UserConfig {
+interface IVitestConfigExport extends UserConfig {
   test: InlineConfig;
 }
 
@@ -16,7 +17,7 @@ const generateComponentEntryPoints = (
   const entries: Record<string, string> = {};
   const directories = fs.readdirSync(directory, { withFileTypes: true });
 
-  directories.forEach(({ parentPath, name }) => {
+  directories.forEach(({ name, parentPath }) => {
     const componentPath = `${parentPath}/${name}/${name}.tsx`;
     if (fs.existsSync(componentPath)) {
       entries[name] = componentPath;
@@ -27,20 +28,17 @@ const generateComponentEntryPoints = (
 };
 
 export default defineConfig({
-  test: {
-    globals: true, // Enables global test APIs (e.g., `describe`, `it`).
-    environment: 'jsdom', // Sets the test environment to jsdom (mimics a browser environment).
-    setupFiles: './setupTests.ts', // Specifies a file to run before tests to set up the environment.
-  },
   build: {
+    emptyOutDir: true, // Clears the output directory before building so no old/outdated files are left behind.
+    sourcemap: false, // If true generates back the original source code (unminified) for debugging.
     lib: {
+      formats: ['es'], // Specifies the output formats (ES modules).
+      name: 'template-react-component-library', // Sets the name of the generated library.
       entry: {
         index: './src/index.ts', // Full library entry point.
         ...generateComponentEntryPoints('src/components'), // Individual components entry points.
       },
-      name: 'template-react-component-library', // Sets the name of the generated library.
       fileName: (format, entryName) => `${entryName}.${format}.js`,
-      formats: ['es'], // Specifies the output formats (ES modules).
     },
     rollupOptions: {
       external: ['react/jsx-runtime', ...Object.keys(peerDependencies)], // Prevents peer dependencies to bundle them into the final output.
@@ -48,14 +46,12 @@ export default defineConfig({
         'react/jsx-runtime': 'react/jsx-runtime',
       },
       output: {
-        chunkFileNames: 'chunks/[name]-[hash].js', // Code-splitting generated chunks.
         assetFileNames: 'assets/[name][extname]',
+        chunkFileNames: 'chunks/[name]-[hash].js', // Code-splitting generated chunks.
         entryFileNames: ({ name }) =>
           name === 'index' ? '[name].js' : 'components/[name]/[name].js', // Entry points for the imported library.}
       },
     },
-    sourcemap: false, // If true generates back the original source code (unminified) for debugging.
-    emptyOutDir: true, // Clears the output directory before building so no old/outdated files are left behind.
   },
   plugins: [
     // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
@@ -64,4 +60,9 @@ export default defineConfig({
     }),
     libInjectCss(),
   ],
-} as VitestConfigExport);
+  test: {
+    environment: 'jsdom', // Sets the test environment to jsdom (mimics a browser environment).
+    globals: true, // Enables global test APIs (e.g., `describe`, `it`).
+    setupFiles: './setupTests.ts', // Specifies a file to run before tests to set up the environment.
+  },
+} as IVitestConfigExport);
