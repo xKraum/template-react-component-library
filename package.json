@@ -1,5 +1,5 @@
 {
-  "name": "template-react-component-library",
+  "name": "@jolacdev/template-react-component-library",
   "version": "1.0.0",
   "description": "Template library for React components",
   "author": "Jose Lacueva",
@@ -8,7 +8,7 @@
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "dist"
   ],
   "exports": {
     ".": {
@@ -19,6 +19,9 @@
       "import": "./dist/components/*/*.js",
       "types": "./dist/components/*/*.d.ts"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && vite build",
