@@ -1,5 +1,10 @@
 name: Continuous Integration (Build, Lint, Tests)
-on: [push]
+on:
+  pull_request:
+    branches:
+      - develop
+      - master
+      - main
 jobs:
   install-cache:
     name: Install-Cache
