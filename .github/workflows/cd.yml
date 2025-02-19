@@ -1,0 +1,97 @@
+name: Continuous Deployment (Build, Generate Release, Publish)
+on:
+  push:
+    branches:
+      - master
+      - main
+jobs:
+  install-cache:
+    name: Install-Cache
+    strategy:
+      matrix:
+        node-version: [22.x]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-npm-
+      - name: Install Dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: npm ci
+
+  build:
+    name: Build
+    strategy:
+      matrix:
+        node-version: [22.x]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    needs: [install-cache]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Restore cached dependencies
+        uses: actions/cache@v4
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+      - name: Build (Vite)
+        run: npm run build
+      - name: Save build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 1
+          overwrite: true
+
+  release:
+    name: Generate release and publish
+    strategy:
+      matrix:
+        node-version: [22.x]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    needs: [install-cache, build]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Restore cached dependencies
+        uses: actions/cache@v4
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+      - name: Download saved artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - name: Generate and publish release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
