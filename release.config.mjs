@@ -2,7 +2,7 @@
  * @type {import('semantic-release').GlobalConfig}
  */
 export default {
-  branches: ['github-actions'],
+  branches: ['main', 'master'],
   // NOTE: commit-analyzer, release-notes-generator, npm and github are already part of @semantic-release.
   plugins: [
     '@semantic-release/commit-analyzer',
