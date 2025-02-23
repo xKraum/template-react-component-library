@@ -15,7 +15,7 @@ This document includes a comprehensible documentation that explains the purpose 
 
 ---
 
-## 🔧 Tech Stack
+## 🔧 Tech Stack[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-tech-stack)
 
 | Category                   | Technologies                                                                                                                                                                                                                                                    |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
