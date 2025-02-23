@@ -62,3 +62,7 @@ vite.config.ts
 <div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
 
 ---
+
+## Github Actions <img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="Node" align=left width=32>
+
+---
