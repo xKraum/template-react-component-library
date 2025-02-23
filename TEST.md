@@ -12,6 +12,7 @@ This document includes a comprehensible documentation that explains the purpose 
 
 - [🔧 Tech Stack](#-tech-stack)
 - [📦 Folder Structure](#-folder-structure)
+- [📜 Project Scripts](#-project-scripts)
 
 ---
 
@@ -74,6 +75,66 @@ setupTests.ts
 tsconfig.build.json
 tsconfig.json
 vite.config.ts
+```
+
+<div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
+
+---
+
+## 📜 Project Scripts[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-project-scripts)
+
+### 🏗️ Build library: `build`
+
+```
+tsc -p tsconfig.build.json && vite build
+```
+
+### 🖌️ Run Prettier: `format`
+
+```
+prettier --write --parser typescript '**/*.{ts,tsx}'
+```
+
+### 🔍 Run ESLint: `lint`
+
+```
+eslint --fix
+```
+
+### 🔍 Run ESLint without automatic fixes: `lint:no-fix`
+
+```
+eslint
+```
+
+### 🧪 Run tests: `test`
+
+```
+vitest run
+```
+
+### 🧪 Run tests and watch to rerun on code changes: `test:watch`
+
+```
+vitest
+```
+
+### 🧪 Run tests with a server GUI: `test:gui`
+
+```
+vitest --ui
+```
+
+### 📖 Run Storybook server: `storybook`
+
+```
+storybook dev -p 6006
+```
+
+### 📖 Build Storybook `storybook:build`
+
+```
+storybook build
 ```
 
 <div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
