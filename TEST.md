@@ -65,4 +65,6 @@ vite.config.ts
 
 ## Github Actions <img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="Node" align=left width=32>
 
+### Node Usage <img src="https://cdn.simpleicons.org/nodedotjs/000/fff" alt="Node" align=left width=24>
+
 ---
