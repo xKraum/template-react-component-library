@@ -13,6 +13,10 @@ This document includes a comprehensible documentation that explains the purpose 
 - [🔧 Tech Stack](#-tech-stack)
 - [📦 Folder Structure](#-folder-structure)
 - [📜 Project Scripts](#-project-scripts)
+- [📋 Pre-requisites](#-pre-requisites)
+- [⚙️ Project Configuration](#-project-configuration)
+- [🌟 Create a Component](#-create-a-component)
+- [📦 Publish Changes](#-publish-changes)
 
 ---
 
@@ -141,7 +145,7 @@ storybook build
 
 ---
 
-## 📋 Pre-requisites
+## 📋 Pre-requisites[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-pre-requisites)
 
 - VS Code
 - Node v22
@@ -153,7 +157,7 @@ storybook build
 
 ---
 
-## ⚙️ Project Configuration
+## ⚙️ Project Configuration[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-project-configuration)
 
 ### Configure ESLint <img src="https://cdn.simpleicons.org/eslint/000/4B32C3" alt="ESLint" align=left width=24>
 
@@ -183,7 +187,7 @@ storybook build
 
 ---
 
-## 🌟 Create a Component
+## 🌟 Create a Component[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-create-a-component)
 
 ### 🏗️ Create the Component
 
@@ -195,7 +199,7 @@ storybook build
 
 ---
 
-## 📦 Publish Changes
+## 📦 Publish Changes[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-publish-changes)
 
 ### 🔨 Build the Library
 
