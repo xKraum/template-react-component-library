@@ -177,6 +177,13 @@ storybook build
 
 ## ⚙️ Project Configuration[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#%EF%B8%8F-project-configuration)
 
+> [!NOTE]
+>
+> - **ESLint** and **Prettier** are **highly recommended** configurations for ensuring code quality and consistent formatting.
+> - **TypeScript**, **Vite**, and **DTS** are **mandatory** configurations for building and running the project.
+> - **Vitest** and **Storybook** are optional tools for testing components and documentation.
+> - **Lefthook** and **GitHub Actions** are **optional but recommended** tools for automating jobs with Git hooks and CI/CD pipelines.
+
 ### Configure ESLint <img src="https://cdn.simpleicons.org/eslint/000/4B32C3" alt="ESLint" align=left width=24>
 
 <details>
