@@ -179,10 +179,10 @@ storybook build
 
 > [!NOTE]
 >
-> - **ESLint** and **Prettier** are **highly recommended** configurations for ensuring code quality and consistent formatting.
+> - **ESLint** and **Prettier** are **highly recommended** tools for ensuring code quality and consistent formatting.
 > - **TypeScript**, **Vite**, and **DTS** are **mandatory** configurations for building and running the project.
 > - **Vitest** and **Storybook** are optional tools for testing components and documentation.
-> - **Lefthook** and **GitHub Actions** are **optional but recommended** tools for automating jobs with Git hooks and CI/CD pipelines.
+> - **Lefthook** and **GitHub Actions** are optional but **recommended** tools for automating jobs with Git hooks and CI/CD pipelines.
 
 ### Configure ESLint <img src="https://cdn.simpleicons.org/eslint/000/4B32C3" alt="ESLint" align=left width=24>
 
