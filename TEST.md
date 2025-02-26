@@ -25,8 +25,8 @@ This document includes a comprehensible documentation that explains the purpose 
   - [GitHub Actions for CI/CD](#github-actions-for-cicd-)
 - [✍ Create a Component](#-create-a-component)
   - [Create the Component](#create-the-component-)
-  - [Add Tests](#add-tests-)
-  - [Add Storybook](#add-storybook-)
+  - [Add Tests to the Component](#add-tests-)
+  - [Add the Component to the Storybook](#add-storybook-)
 - [🚀 Publish Changes](#-publish-changes)
   - [Build the Library](#build-the-library-)
   - [Generate Release and Deploy](#generate-release-and-deploy-)
@@ -579,9 +579,9 @@ export const perfectionistSortObjects = {
 
 ### Create the Component <img src="https://cdn.simpleicons.org/react/000/61DAFB" alt="React" align=left width=24>
 
-### Add Tests <img src="https://cdn.simpleicons.org/vitest/000/6E9F18" alt="Vitest" align=left width=24>
+### Add Tests to the Component <img src="https://cdn.simpleicons.org/vitest/000/6E9F18" alt="Vitest" align=left width=24>
 
-### Add Storybook <img src="https://cdn.simpleicons.org/storybook/000/FF4785" alt="Storybook" align=left width=24>
+### Add the Component to the Storybook <img src="https://cdn.simpleicons.org/storybook/000/FF4785" alt="Storybook" align=left width=24>
 
 <div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
 
