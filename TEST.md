@@ -192,14 +192,12 @@ storybook build
 >
 > In the flat config format, the configuration is more modular and declarative, allowing for a clearer and more concise setup.
 
-> [!NOTE]
->
-> The files are self-explanatory, with detailed comments explaining their purpose and functionality.
->
-> The `eslint.config.js` is the default configuration file for ESLint, while there is also a `eslint.constants.mjs` file with common objects and configurations for shared use.
-
 <details>
 <summary>Show details</summary>
+
+The files are self-explanatory, with detailed comments explaining their purpose and functionality.
+
+The `eslint.config.js` is the default configuration file for ESLint, while there is also a `eslint.constants.mjs` file with common objects and configurations for shared use.
 
 #### `eslint.config.js`:
 
