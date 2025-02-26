@@ -521,10 +521,32 @@ export const perfectionistSortObjects = {
 
 ### Configure Prettier <img src="https://cdn.simpleicons.org/prettier/000/F7B93E" alt="Prettier" align=left width=24>
 
+The project is configured with Prettier as the code formatter to ensure consistent coding styles throughout the codebase.
+
+The configuration used in this project is shown below. You can adjust it based on the specific needs of your project.
+
 <details>
 <summary>Show details</summary>
 
+#### `.prettierrc.mjs`:
+
+```js
+export default {
+  arrowParens: 'always', // Always include parentheses around arrow function parameters (e.g., (x) => x)
+  bracketSameLine: false, // In HTML/JSX, put `>` of a multi-line element on a new line.
+  endOfLine: 'auto', // Maintain existing line endings (LF/CRLF)
+  jsxSingleQuote: false, // Use double quotes (`"`) in JSX instead of single quotes (`'`)
+  printWidth: 80, // Wrap lines that exceed 80 characters for better readability
+  semi: true, // Always add semicolons (`;`) at the end of statements
+  singleQuote: true, // Use single quotes (`'`) instead of double quotes (`"`) for consistency
+  tabWidth: 2, // Indent using 2 spaces per tab
+  trailingComma: 'all', // Add trailing commas wherever possible (arrays, objects, function params)
+};
+```
+
 </details>
+
+<div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
 
 ### Configure TypeScript <img src="https://cdn.simpleicons.org/typescript/000/3178C6" alt="TypeScript" align=left width=24>
 
@@ -572,7 +594,7 @@ The different Git hooks used in this project and their respective purposes are:
 <details>
 <summary>Show details</summary>
 
-#### `lefthook.yml`
+#### `lefthook.yml`:
 
 ```yml
 # NOTE:
