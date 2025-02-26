@@ -141,8 +141,58 @@ storybook build
 
 ---
 
-## Github Actions <img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="Node" align=left width=32>
+## 📋 Pre-requisites
 
-### Node Usage <img src="https://cdn.simpleicons.org/nodedotjs/000/fff" alt="Node" align=left width=24>
+- VS Code
+- Node v22
+- Git
+- TypeScript knowledge
+- React knowledge
+
+<div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
+
+---
+
+## ⚙️ Project Configuration
+
+### Configure ESLint <img src="https://cdn.simpleicons.org/eslint/000/4B32C3" alt="ESLint" align=left width=24>
+
+### Configure Prettier <img src="https://cdn.simpleicons.org/prettier/000/F7B93E" alt="Prettier" align=left width=24>
+
+### Configure TypeScript <img src="https://cdn.simpleicons.org/typescript/000/3178C6" alt="TypeScript" align=left width=24>
+
+### Configure Vite & DTS <img src="https://cdn.simpleicons.org/vite/000/646CFF" alt="Vite" align=left width=24>
+
+### Configure Vitest <img src="https://cdn.simpleicons.org/vitest/000/6E9F18" alt="Vitest" align=left width=24>
+
+### Configure Storybook <img src="https://cdn.simpleicons.org/storybook/000/FF4785" alt="Storybook" align=left width=24>
+
+### Configure Git Hooks <img src="https://cdn.simpleicons.org/lefthook/000/FF1E1E" alt="Lefthook" align=left width=24>
+
+### GitHub Actions for CI/CD <img style="margin-right: 8px;" src="https://cdn.simpleicons.org/githubactions/000/2088FF" alt="GitHub Actions" align=left width=24>
+
+<div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
+
+---
+
+## 🌟 Create a Component
+
+### 🏗️ Create the Component
+
+### 🧪 Add Tests
+
+### 📚 Add Storybook
+
+<div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
+
+---
+
+## 📦 Publish Changes
+
+### 🔨 Build the Library
+
+### 🚀 Generate Release and Deploy
+
+<div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
 
 ---
