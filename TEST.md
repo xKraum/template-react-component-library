@@ -10,11 +10,11 @@ This document includes a comprehensible documentation that explains the purpose 
 
 ## 📋 Table of Contents[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-table-of-contents)
 
-- [🔧 Tech Stack](#-tech-stack)
+- [🌐 Tech Stack](#-tech-stack)
 - [📦 Folder Structure](#-folder-structure)
 - [📜 Project Scripts](#-project-scripts)
 - [📋 Pre-requisites](#-pre-requisites)
-- [⚙️ Project Configuration](#-project-configuration)
+- [🔧 Project Configuration](#-project-configuration)
   - [Configure ESLint](#configure-eslint-)
   - [Configure Prettier](#configure-prettier-)
   - [Configure TypeScript](#configure-typescript-)
