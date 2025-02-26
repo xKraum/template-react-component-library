@@ -14,7 +14,7 @@ This document includes a comprehensible documentation that explains the purpose 
 - [📦 Folder Structure](#-folder-structure)
 - [📜 Project Scripts](#-project-scripts)
 - [📋 Pre-requisites](#-pre-requisites)
-- [⚙️ Project Configuration](#-project-configuration)
+- [⚙️ Project Configuration](#%EF%B8%8F-project-configuration)
 - [🌟 Create a Component](#-create-a-component)
 - [📦 Publish Changes](#-publish-changes)
 
@@ -162,7 +162,7 @@ storybook build
 
 ---
 
-## ⚙️ Project Configuration[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-project-configuration)
+## ⚙️ Project Configuration[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#%EF%B8%8F-project-configuration)
 
 ### Configure ESLint <img src="https://cdn.simpleicons.org/eslint/000/4B32C3" alt="ESLint" align=left width=24>
 
