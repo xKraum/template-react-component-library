@@ -179,22 +179,57 @@ storybook build
 
 ### Configure ESLint <img src="https://cdn.simpleicons.org/eslint/000/4B32C3" alt="ESLint" align=left width=24>
 
+<details>
+<summary>Show details</summary>
+
+</details>
+
 ### Configure Prettier <img src="https://cdn.simpleicons.org/prettier/000/F7B93E" alt="Prettier" align=left width=24>
+
+<details>
+<summary>Show details</summary>
+
+</details>
 
 ### Configure TypeScript <img src="https://cdn.simpleicons.org/typescript/000/3178C6" alt="TypeScript" align=left width=24>
 
+<details>
+<summary>Show details</summary>
+
+</details>
+
 ### Configure Vite & DTS <img src="https://cdn.simpleicons.org/vite/000/646CFF" alt="Vite" align=left width=24>
+
+<details>
+<summary>Show details</summary>
+
+</details>
 
 ### Configure Vitest <img src="https://cdn.simpleicons.org/vitest/000/6E9F18" alt="Vitest" align=left width=24>
 
+<details>
+<summary>Show details</summary>
+
+</details>
+
 ### Configure Storybook <img src="https://cdn.simpleicons.org/storybook/000/FF4785" alt="Storybook" align=left width=24>
 
+<details>
+<summary>Show details</summary>
+
+</details>
+
 ### Configure Git Hooks <img src="https://cdn.simpleicons.org/lefthook/000/FF1E1E" alt="Lefthook" align=left width=24>
+
+<details>
+<summary>Show details</summary>
+
+</details>
 
 ### GitHub Actions for CI/CD <img style="margin-right: 8px;" src="https://cdn.simpleicons.org/githubactions/000/2088FF" alt="GitHub Actions" align=left width=24>
 
 <details>
-<summary>Details</summary>
+<summary>Show details</summary>
 
 - GitHub Workflows
 - Semantic Release
