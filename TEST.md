@@ -13,10 +13,32 @@ This document includes a comprehensible documentation that explains the purpose 
 - [🔧 Tech Stack](#-tech-stack)
 - [📦 Folder Structure](#-folder-structure)
 - [📜 Project Scripts](#-project-scripts)
+  - [build](#%EF%B8%8F-build-library-build)
+  - [format](#%EF%B8%8F-run-prettier-format)
+  - [lint](#-run-eslint-lint)
+  - [lint:no-fix](#-run-eslint-without-automatic-fixes-lintno-fix)
+  - [test](#-run-tests-test)
+  - [test:watch](#-run-tests-and-watch-to-rerun-on-code-changes-testwatch)
+  - [test:gui](#-run-tests-with-a-server-gui-testgui)
+  - [storybook](#-run-storybook-server-storybook)
+  - [storybook:build](#-build-storybook-storybookbuild)
 - [📋 Pre-requisites](#-pre-requisites)
 - [⚙️ Project Configuration](#%EF%B8%8F-project-configuration)
+  - [Configure ESLint](#configure-eslint-)
+  - [Configure Prettier](#configure-prettier-)
+  - [Configure TypeScript](#configure-typescript-)
+  - [Configure Vite & DTS](#configure-vite--dts-)
+  - [Configure Vitest](#configure-vitest-)
+  - [Configure Storybook](#configure-storybook-)
+  - [Configure Git Hooks](#configure-git-hooks-)
+  - [GitHub Actions for CI/CD](#github-actions-for-cicd-)
 - [🌟 Create a Component](#-create-a-component)
+  - [Create the Component](#%EF%B8%8F-create-the-component)
+  - [Add Tests](#-add-tests)
+  - [Add Storybook](#-add-storybook)
 - [📦 Publish Changes](#-publish-changes)
+  - [Build the Library](#-build-the-library)
+  - [Generate Release and Deploy](#-generate-release-and-deploy)
 
 ---
 
@@ -88,7 +110,7 @@ vite.config.ts
 ## 📜 Project Scripts[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-project-scripts)
 
 <details>
-<summary>Show project scripts</summary>
+<summary>Show available project scripts</summary>
 
 ### 🏗️ Build library: `build`
 
