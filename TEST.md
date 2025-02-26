@@ -23,7 +23,7 @@ This document includes a comprehensible documentation that explains the purpose 
   - [Configure Storybook](#configure-storybook-)
   - [Configure Git Hooks](#configure-git-hooks-)
   - [GitHub Actions for CI/CD](#github-actions-for-cicd-)
-- [✏️ Create a Component](#-create-a-component)
+- [✍ Create a Component](#-create-a-component)
   - [Create the Component](#create-the-component-)
   - [Add Tests](#add-tests-)
   - [Add Storybook](#add-storybook-)
@@ -575,7 +575,7 @@ export const perfectionistSortObjects = {
 
 ---
 
-## ✏️ Create a Component[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-create-a-component)
+## ✍ Create a Component[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-create-a-component)
 
 ### Create the Component <img src="https://cdn.simpleicons.org/react/000/61DAFB" alt="React" align=left width=24>
 
