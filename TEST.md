@@ -87,6 +87,9 @@ vite.config.ts
 
 ## 📜 Project Scripts[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-project-scripts)
 
+<details>
+<summary>Show project scripts</summary>
+
 ### 🏗️ Build library: `build`
 
 ```
@@ -140,6 +143,8 @@ storybook dev -p 6006
 ```
 storybook build
 ```
+
+</details>
 
 <div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
 
