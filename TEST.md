@@ -171,6 +171,14 @@ storybook build
 
 ### GitHub Actions for CI/CD <img style="margin-right: 8px;" src="https://cdn.simpleicons.org/githubactions/000/2088FF" alt="GitHub Actions" align=left width=24>
 
+<details>
+<summary>Details</summary>
+
+- GitHub Workflows
+- Semantic Release
+
+</details>
+
 <div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
 
 ---
