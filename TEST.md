@@ -515,9 +515,9 @@ export const perfectionistSortObjects = {
 };
 ```
 
-<div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
-
 </details>
+
+<div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
 
 ### Configure Prettier <img src="https://cdn.simpleicons.org/prettier/000/F7B93E" alt="Prettier" align=left width=24>
 
@@ -556,10 +556,56 @@ export const perfectionistSortObjects = {
 
 ### Configure Git Hooks <img src="https://cdn.simpleicons.org/lefthook/000/FF1E1E" alt="Lefthook" align=left width=24>
 
+> [!NOTE]
+>
+> Git hooks are managed with _Lefthook_.
+>
+> Although _Husky_ is more extended, _Lefthook_ is a mature and actively maintained library that offers better performance, parallel execution, supports partially staged files, etc.
+
+The different Git hooks used in this project and their respective purposes are:
+
+- **pre-commit**: Runs before each commit to ensure that the staged code is properly linted and formatted. It supports partially staged files.
+- **pre-push**: Executes before each push to ensure that all tests pass successfully.
+
+> **💡 Tip**: Use the `--no-verify` or `-n` flag in the Git command to bypass these hooks.
+
 <details>
 <summary>Show details</summary>
 
+#### `lefthook.yml`
+
+```yml
+# NOTE:
+# Lefthook creates a backup stash before running the pre-commit hook.
+# Supports partially staged files.
+pre-commit:
+  parallel: false
+  # Stop running commands and scripts if one of them fails.
+  piped: true
+  # Commands that will be executed before commit.
+  commands:
+    # Commands run in alphabetical order, so they are prefixed with numbers.
+    1_lint:
+      # Since linter can fail even though it fixes some errors, we don't fix them in order to prevent unstaged changes.
+      glob: '*.{ts,tsx}'
+      run: npm run lint:no-fix {staged_files}
+    2_format:
+      # Format staged code.
+      run: npm run format
+    3_update-index:
+      # Update Git index to include changes made by previous commands.
+      run: git update-index --again
+pre-push:
+  commands:
+    test:
+      # Allow push if all tests pass.
+      # The tests run in the all the code committed, staged and unstaged.
+      run: npm run test
+```
+
 </details>
+
+<div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
 
 ### Configure GitHub Actions <img src="https://cdn.simpleicons.org/githubactions/000/2088FF" alt="GitHub Actions" align=left width=24>
 
