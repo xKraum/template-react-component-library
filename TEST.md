@@ -27,7 +27,7 @@ This document includes a comprehensible documentation that explains the purpose 
   - [Create the Component](#create-the-component-)
   - [Add Tests](#add-tests-)
   - [Add Storybook](#add-storybook-)
-- [📦 Publish Changes](#-publish-changes)
+- [🚀 Publish Changes](#-publish-changes)
   - [Build the Library](#build-the-library-)
   - [Generate Release and Deploy](#generate-release-and-deploy-)
 
@@ -587,7 +587,7 @@ export const perfectionistSortObjects = {
 
 ---
 
-## 📦 Publish Changes[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-publish-changes)
+## 🚀 Publish Changes[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-publish-changes)
 
 ### Build the Library <img src="https://cdn.simpleicons.org/githubactions/000/2088FF" alt="GitHub Actions" align=left width=24>
 
