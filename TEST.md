@@ -24,12 +24,12 @@ This document includes a comprehensible documentation that explains the purpose 
   - [Configure Git Hooks](#configure-git-hooks-)
   - [GitHub Actions for CI/CD](#github-actions-for-cicd-)
 - [🌟 Create a Component](#-create-a-component)
-  - [Create the Component](#%EF%B8%8F-create-the-component)
-  - [Add Tests](#-add-tests)
-  - [Add Storybook](#-add-storybook)
+  - [Create the Component](#create-the-component-)
+  - [Add Tests](#add-tests-)
+  - [Add Storybook](#add-storybook-)
 - [📦 Publish Changes](#-publish-changes)
-  - [Build the Library](#-build-the-library)
-  - [Generate Release and Deploy](#-generate-release-and-deploy)
+  - [Build the Library](#build-the-library-)
+  - [Generate Release and Deploy](#generate-release-and-deploy-)
 
 ---
 
@@ -577,11 +577,11 @@ export const perfectionistSortObjects = {
 
 ## 🌟 Create a Component[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-create-a-component)
 
-### 🏗️ Create the Component
+### Create the Component <img src="https://cdn.simpleicons.org/react/000/61DAFB" alt="React" align=left width=24>
 
-### 🧪 Add Tests
+### Add Tests <img src="https://cdn.simpleicons.org/vitest/000/6E9F18" alt="Vitest" align=left width=24>
 
-### 📚 Add Storybook
+### Add Storybook <img src="https://cdn.simpleicons.org/storybook/000/FF4785" alt="Storybook" align=left width=24>
 
 <div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
 
@@ -589,9 +589,9 @@ export const perfectionistSortObjects = {
 
 ## 📦 Publish Changes[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-publish-changes)
 
-### 🔨 Build the Library
+### Build the Library <img src="https://cdn.simpleicons.org/githubactions/000/2088FF" alt="GitHub Actions" align=left width=24>
 
-### 🚀 Generate Release and Deploy
+### Generate Release and Deploy <img src="https://cdn.simpleicons.org/npm/000/CB3837" alt="NPM" align=left width=24>
 
 <div align="right"><kbd><a href="#-table-of-contents">↑ Back to top ↑</a></kbd></div>
 
