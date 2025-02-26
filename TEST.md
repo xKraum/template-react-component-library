@@ -186,9 +186,6 @@ storybook build
 
 ### Configure ESLint <img src="https://cdn.simpleicons.org/eslint/000/4B32C3" alt="ESLint" align=left width=24>
 
-<details>
-<summary>Show details</summary>
-
 > [!IMPORTANT]
 >
 > The project is configured with ESLint 9, which introduces a new configuration format called _flat config_.
@@ -200,6 +197,9 @@ storybook build
 > The files are self-explanatory, with detailed comments explaining their purpose and functionality.
 >
 > The `eslint.config.js` is the default configuration file for ESLint, while there is also a `eslint.constants.mjs` file with common objects and configurations for shared use.
+
+<details>
+<summary>Show details</summary>
 
 #### `eslint.config.js`:
 
