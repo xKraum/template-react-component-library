@@ -14,7 +14,7 @@ This document includes a comprehensible documentation that explains the purpose 
 - [📦 Folder Structure](#-folder-structure)
 - [📜 Project Scripts](#-project-scripts)
 - [📋 Pre-requisites](#-pre-requisites)
-- [⚙️ Project Configuration](#%EF%B8%8F-project-configuration)
+- [⚙️ Project Configuration](#-project-configuration)
   - [Configure ESLint](#configure-eslint-)
   - [Configure Prettier](#configure-prettier-)
   - [Configure TypeScript](#configure-typescript-)
@@ -33,7 +33,7 @@ This document includes a comprehensible documentation that explains the purpose 
 
 ---
 
-## 🔧 Tech Stack[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-tech-stack)
+## 🌐 Tech Stack[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-tech-stack)
 
 | Category                   | Technologies                                                                                                                                                                                                                                                    |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -175,7 +175,7 @@ storybook build
 
 ---
 
-## ⚙️ Project Configuration[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#%EF%B8%8F-project-configuration)
+## 🔧 Project Configuration[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#-project-configuration)
 
 > [!NOTE]
 >
@@ -233,7 +233,7 @@ storybook build
 
 </details>
 
-### GitHub Actions for CI/CD <img style="margin-right: 8px;" src="https://cdn.simpleicons.org/githubactions/000/2088FF" alt="GitHub Actions" align=left width=24>
+### Configure GitHub Actions <img src="https://cdn.simpleicons.org/githubactions/000/2088FF" alt="GitHub Actions" align=left width=24>
 
 <details>
 <summary>Show details</summary>
