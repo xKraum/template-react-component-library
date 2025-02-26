@@ -535,12 +535,12 @@ export default {
   arrowParens: 'always', // Always include parentheses around arrow function parameters (e.g., (x) => x)
   bracketSameLine: false, // In HTML/JSX, put `>` of a multi-line element on a new line.
   endOfLine: 'auto', // Maintain existing line endings (LF/CRLF)
-  jsxSingleQuote: false, // Use double quotes (`"`) in JSX instead of single quotes (`'`)
+  jsxSingleQuote: false, // Use double quotes `"` in JSX instead of single quotes `'`
   printWidth: 80, // Wrap lines that exceed 80 characters for better readability
-  semi: true, // Always add semicolons (`;`) at the end of statements
-  singleQuote: true, // Use single quotes (`'`) instead of double quotes (`"`) for consistency
+  semi: true, // Always add semicolons `;` at the end of statements
+  singleQuote: true, // Use single quotes `'` instead of double quotes `"` for consistency
   tabWidth: 2, // Indent using 2 spaces per tab
-  trailingComma: 'all', // Add trailing commas wherever possible (arrays, objects, function params)
+  trailingComma: 'all', // Add trailing commas wherever possible (arrays, objects...)
 };
 ```
 
