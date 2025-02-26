@@ -103,7 +103,7 @@ vite.config.ts
 <details>
 <summary>Show available project scripts</summary>
 
-### 🏗️ Build library: `build`
+### 🔨 Build library: `build`
 
 ```
 tsc -p tsconfig.build.json && vite build
