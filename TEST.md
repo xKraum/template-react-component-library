@@ -558,9 +558,9 @@ export const perfectionistSortObjects = {
 
 > [!NOTE]
 >
-> Git hooks are managed with _Lefthook_.
+> Git hooks are managed with _**Lefthook**_.
 >
-> Although _Husky_ is more extended, _Lefthook_ is a mature and actively maintained library that offers better performance, parallel execution, supports partially staged files, etc.
+> Although _Husky_ is more extended, _Lefthook_ is a mature and actively maintained library that offers **better performance**, **parallel execution**, supports **partially staged files**, etc.
 
 The different Git hooks used in this project and their respective purposes are:
 
